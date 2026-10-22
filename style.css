@@ -1,0 +1,289 @@
+:root{
+    --dark: #1c1c1e;
+    --orange: #e07b2c;
+    --gray: #6b6b6b;
+    --light: #f5f4f0;
+}
+
+body{
+    margin: 0;
+    font-family: "Inter", Arial, sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+h2{
+    font-size: 34px;
+    margin: 0 0 10px;
+}
+
+.label{
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* ===== HEADER ===== */
+header{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background-color: var(--dark);
+}
+.logo{
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    text-decoration: none;
+}
+.logo span{
+    color: var(--orange);
+}
+nav a{
+    color: #ddd;
+    text-decoration: none;
+    margin-left: 28px;
+    font-size: 15px;
+}
+nav a:hover{
+    color: var(--orange);
+}
+/* first link doesn't need space on its left */
+nav a:first-child{
+    margin-left: 0;
+}
+/* outline when using the keyboard (Tab key) */
+nav a:focus-visible,
+.button:focus-visible{
+    outline: 3px solid var(--orange);
+    outline-offset: 4px;
+}
+
+/* ===== HERO WITH REAL PHOTO ===== */
+.hero{
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    background-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)),
+                      url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Bishkek_-_panoramio.jpg/1920px-Bishkek_-_panoramio.jpg");
+    background-size: cover;
+    background-position: center bottom;
+    color: white;
+}
+.hero-text{
+    max-width: 580px;
+}
+.hero h1{
+    font-size: 60px;
+    line-height: 1.1;
+    margin: 10px 0 20px;
+}
+.button{
+    display: inline-block;
+    margin-top: 10px;
+    padding: 14px 32px;
+    background-color: var(--orange);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+}
+.button:hover{
+    background-color: #c4661b;
+}
+/* button "presses down" when clicked */
+.button:active{
+    transform: scale(0.96);
+}
+
+/* ===== FACTS ===== */
+.facts{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 70px 20px;
+    text-align: center;
+}
+.intro{
+    color: var(--gray);
+    margin: 0 0 40px;
+}
+.stats{
+    display: flex;
+    gap: 20px;
+}
+.stat{
+    flex: 1;
+    background-color: white;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    transition: transform 0.2s;
+}
+.stat:hover{
+    transform: translateY(-6px);
+}
+/* the first stat (PM2.5 level) is the most important, so it stands out */
+.stat:first-of-type{
+    background-color: var(--dark);
+}
+.stat:first-of-type p{
+    color: #ccc;
+}
+.number{
+    display: block;
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--orange);
+}
+.stat p{
+    color: var(--gray);
+    font-size: 15px;
+    margin: 8px 0 0;
+}
+
+/* ===== PHOTO + TEXT SECTIONS ===== */
+.split{
+    display: flex;
+    min-height: 480px;
+    background-color: white;
+}
+.split.reverse{
+    flex-direction: row-reverse;
+}
+.split img{
+    width: 50%;
+    object-fit: cover;
+}
+.split-text{
+    width: 50%;
+    padding: 60px;
+    box-sizing: border-box;
+    align-self: center;
+}
+.split-text p{
+    color: var(--gray);
+}
+/* no extra space under the last paragraph */
+.split-text p:last-child{
+    margin-bottom: 0;
+}
+
+/* ===== SOLUTIONS ===== */
+.solutions{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 70px 20px;
+    text-align: center;
+}
+.cards{
+    display: flex;
+    gap: 24px;
+    margin-top: 30px;
+}
+.card{
+    flex: 1;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    border-top: 4px solid var(--orange);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    text-align: left;
+    transition: transform 0.2s;
+}
+.card:hover{
+    transform: translateY(-6px);
+}
+.card h3{
+    margin-top: 0;
+}
+.card p{
+    color: var(--gray);
+}
+
+/* ===== SOURCES ===== */
+.sources{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+}
+.sources h2{
+    font-size: 24px;
+}
+.sources a{
+    color: var(--dark);
+}
+/* links you already opened turn gray */
+.sources a:visited{
+    color: var(--gray);
+}
+.sources li{
+    padding: 8px 12px;
+}
+/* striped list: every second row gets a background */
+.sources li:nth-child(even){
+    background-color: white;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    background-color: var(--dark);
+    color: #999;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+footer a{
+    color: #ccc;
+}
+/* every footer paragraph except the credits is a bit brighter */
+footer p:not(.credits){
+    color: #ddd;
+}
+.credits{
+    font-size: 12px;
+}
+
+/* ===== PHONES ===== */
+@media (max-width: 800px){
+    header{
+        flex-direction: column;
+        gap: 10px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+    nav a,
+    nav a:first-child{
+        margin: 0 8px;
+    }
+    .hero{
+        padding: 0 16px;
+    }
+    .hero h1{
+        font-size: 40px;
+    }
+    .stats,
+    .cards,
+    .split,
+    .split.reverse{
+        flex-direction: column;
+    }
+    .split img,
+    .split-text{
+        width: 100%;
+    }
+    .split img{
+        height: 280px;
+    }
+    .split-text{
+        padding: 30px 20px;
+    }
+}

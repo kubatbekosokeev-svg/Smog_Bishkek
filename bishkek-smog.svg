@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- hazy sky -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8a8f8c"/>
+      <stop offset="0.55" stop-color="#b9b49d"/>
+      <stop offset="1" stop-color="#9c9580"/>
+    </linearGradient>
+    <!-- smog layer -->
+    <linearGradient id="smog" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a39e8a" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#8d8775" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#5f5b50" stop-opacity="0.9"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f3d9a4" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#f3d9a4" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="blurBig"><feGaussianBlur stdDeviation="18"/></filter>
+  </defs>
+
+  <rect width="1200" height="600" fill="url(#sky)"/>
+
+  <!-- dim sun behind the smog -->
+  <circle cx="880" cy="150" r="120" fill="url(#sun)"/>
+  <circle cx="880" cy="150" r="34" fill="#eed3a0" opacity="0.6"/>
+
+  <!-- Ala-Too mountains (faded by haze) -->
+  <path d="M0 330 L90 250 L160 290 L250 190 L330 260 L420 170 L520 270 L600 210 L690 280 L780 180 L870 250 L960 200 L1060 270 L1140 220 L1200 250 L1200 400 L0 400 Z"
+        fill="#9a9a96" opacity="0.65"/>
+  <path d="M250 190 L280 215 L265 214 L250 230 L238 212 Z M420 170 L450 200 L432 197 L418 214 L400 193 Z M780 180 L808 208 L790 205 L776 220 L760 203 Z M960 200 L985 222 L968 220 L958 232 L944 220 Z"
+        fill="#d8d6cf" opacity="0.55"/>
+
+  <!-- distant city -->
+  <g fill="#6f6b60" opacity="0.8">
+    <rect x="20" y="360" width="60" height="80"/>
+    <rect x="90" y="340" width="40" height="100"/>
+    <rect x="140" y="370" width="80" height="70"/>
+    <rect x="235" y="330" width="45" height="110"/>
+    <rect x="290" y="355" width="70" height="85"/>
+    <rect x="375" y="345" width="50" height="95"/>
+    <rect x="440" y="365" width="90" height="75"/>
+    <rect x="545" y="335" width="40" height="105"/>
+    <rect x="600" y="360" width="75" height="80"/>
+    <rect x="690" y="340" width="55" height="100"/>
+    <rect x="760" y="368" width="85" height="72"/>
+    <rect x="860" y="345" width="45" height="95"/>
+    <rect x="915" y="360" width="80" height="80"/>
+    <rect x="1010" y="338" width="50" height="102"/>
+    <rect x="1075" y="362" width="70" height="78"/>
+    <rect x="1150" y="350" width="50" height="90"/>
+  </g>
+
+  <!-- thermal power plant (CHP) with chimneys -->
+  <g fill="#4d4a43">
+    <rect x="160" y="250" width="22" height="190"/>
+    <rect x="200" y="270" width="18" height="170"/>
+    <rect x="130" y="380" width="120" height="60"/>
+  </g>
+  <rect x="160" y="262" width="22" height="8" fill="#a8473a"/>
+  <rect x="200" y="282" width="18" height="7" fill="#a8473a"/>
+
+  <!-- smoke from chimneys -->
+  <g fill="#3f3c36" opacity="0.55" filter="url(#blur)">
+    <ellipse cx="175" cy="225" rx="30" ry="22"/>
+    <ellipse cx="200" cy="190" rx="45" ry="30"/>
+    <ellipse cx="245" cy="160" rx="60" ry="36"/>
+    <ellipse cx="310" cy="135" rx="80" ry="40"/>
+    <ellipse cx="400" cy="120" rx="100" ry="42"/>
+    <ellipse cx="212" cy="250" rx="26" ry="18"/>
+  </g>
+
+  <!-- house chimneys smoke (coal heating) -->
+  <g fill="#4a463e" opacity="0.4" filter="url(#blur)">
+    <ellipse cx="640" cy="320" rx="40" ry="20"/>
+    <ellipse cx="980" cy="315" rx="45" ry="22"/>
+    <ellipse cx="450" cy="325" rx="35" ry="18"/>
+  </g>
+
+  <!-- smog blanket over the city -->
+  <rect x="0" y="230" width="1200" height="370" fill="url(#smog)"/>
+  <g fill="#7d7868" opacity="0.35" filter="url(#blurBig)">
+    <ellipse cx="300" cy="330" rx="300" ry="60"/>
+    <ellipse cx="850" cy="320" rx="380" ry="70"/>
+  </g>
+
+  <!-- foreground buildings -->
+  <g fill="#2f2d29">
+    <rect x="0" y="440" width="110" height="160"/>
+    <rect x="120" y="470" width="90" height="130"/>
+    <rect x="225" y="420" width="70" height="180"/>
+    <rect x="310" y="455" width="130" height="145"/>
+    <rect x="455" y="430" width="85" height="170"/>
+    <rect x="555" y="480" width="110" height="120"/>
+    <rect x="680" y="410" width="75" height="190"/>
+    <rect x="770" y="460" width="120" height="140"/>
+    <rect x="905" y="435" width="80" height="165"/>
+    <rect x="1000" y="470" width="100" height="130"/>
+    <rect x="1110" y="445" width="90" height="155"/>
+  </g>
+
+  <!-- windows -->
+  <g fill="#c9a659" opacity="0.55">
+    <rect x="20" y="460" width="10" height="12"/><rect x="50" y="460" width="10" height="12"/><rect x="80" y="490" width="10" height="12"/>
+    <rect x="240" y="440" width="10" height="12"/><rect x="265" y="470" width="10" height="12"/><rect x="240" y="500" width="10" height="12"/>
+    <rect x="470" y="450" width="10" height="12"/><rect x="510" y="480" width="10" height="12"/>
+    <rect x="695" y="430" width="10" height="12"/><rect x="725" y="460" width="10" height="12"/><rect x="695" y="490" width="10" height="12"/>
+    <rect x="920" y="455" width="10" height="12"/><rect x="955" y="485" width="10" height="12"/>
+    <rect x="1130" y="465" width="10" height="12"/><rect x="1165" y="495" width="10" height="12"/>
+  </g>
+
+  <!-- low haze over everything -->
+  <rect x="0" y="0" width="1200" height="600" fill="#8f8a78" opacity="0.12"/>
+</svg>
